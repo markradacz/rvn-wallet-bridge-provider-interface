@@ -1,0 +1,28 @@
+{
+  "name": "rvn-wallet-bridge-provider-interface",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "rm -rf lib && tsc",
+    "docs": "npm run docs:build && npm run docs:touch-nojekyll",
+    "docs:build": "typedoc --out docs src --plugin typedoc-plugin-example-tag",
+    "docs:touch-nojekyll": "touch docs/.nojekyll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raven-community/rvn-wallet-bridge-provider-interface.git"
+  },
+  "author": "MSFTserver",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/raven-community/bch-wallet-bridge-provider-interface/issues"
+  },
+  "homepage": "https://github.com/raven-community/bch-wallet-bridge-provider-interface#readme",
+  "devDependencies": {
+    "tslib": "^1.9.3",
+    "tslint": "^5.11.0",
+    "typedoc": "^0.13.0",
+    "typedoc-plugin-example-tag": "Yuiki/typedoc-plugin-example-tag#master",
+    "typescript": "^3.1.6"
+  }
+}
