@@ -15,9 +15,9 @@
   "author": "MSFTserver",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/raven-community/bch-wallet-bridge-provider-interface/issues"
+    "url": "https://github.com/raven-community/rvn-wallet-bridge-provider-interface/issues"
   },
-  "homepage": "https://github.com/raven-community/bch-wallet-bridge-provider-interface#readme",
+  "homepage": "https://github.com/raven-community/rvn-wallet-bridge-provider-interface#readme",
   "devDependencies": {
     "tslib": "^1.9.3",
     "tslint": "^5.11.0",
