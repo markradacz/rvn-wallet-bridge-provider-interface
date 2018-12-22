@@ -29,12 +29,12 @@ export default interface IWalletProvider {
    * @param dAppId The DApp ID. If no dAppId is set the default DApp ID will be set.
    * @returns The wallet address list.
    */
-  getAddresses(
-    changeType: number,
-    size: number,
-    startIndex?: number,
-    dAppId?: string
-  ): Promise<string[]>
+  // getAssetAddresses(
+  //   changeType: number,
+  //   size: number,
+  //   startIndex?: number,
+  //   asset: string
+  // ): Promise<string[]>
 
   /**
    * Returns the current wallet address index.
@@ -49,10 +49,10 @@ export default interface IWalletProvider {
    * @param dAppId The DApp ID. If no dAppId is set the default DApp ID will be set.
    * @returns The current wallet address index.
    */
-  getAddressIndex(
-    change: number,
-    dAppId?: string
-  ): Promise<number>
+  // getAssetAddressIndex(
+  //   change: number,
+  //   asset: string
+  // ): Promise<number>
 
   /**
    * Returns the stored redeem scripts related to the DApp ID.
@@ -66,7 +66,7 @@ export default interface IWalletProvider {
    * @returns The list of redeem scripts stored.
    */
   getRedeemScripts(
-    dAppId?: string
+    txid: string
   ): Promise<string[]>
 
   /**
@@ -80,7 +80,7 @@ export default interface IWalletProvider {
    */
   addRedeemScript(
     redeemScript: string,
-    dAppId?: string
+    txid: string
   ): Promise<void>
 
   /**
@@ -102,7 +102,7 @@ export default interface IWalletProvider {
    * @param dAppId The DApp ID.
    * @returns The unspent transaction output object list.
    */
-  getSpendableUtxos(dAppId?: string): Promise<Utxo[]>
+  getSpendableUtxos(address: string): Promise<Utxo[]>
 
   /**
    * Returns the unspent transaction outputs belonging to the DApp which addresses are unspendable.
@@ -125,7 +125,7 @@ export default interface IWalletProvider {
    * If the addresses of the DApp are spendable, returns an empty array.
    */
   getUnspendableUtxos(
-    dAppId: string
+    address: string
   ): Promise<Utxo[]>
 
   /**
@@ -168,7 +168,7 @@ export default interface IWalletProvider {
    */
   createSignedTx(
     outputs: Output[],
-    dAppId?: string
+    address: string
   ): Promise<string>
 
   /**

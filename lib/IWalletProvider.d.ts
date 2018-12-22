@@ -27,7 +27,7 @@ export default interface IWalletProvider {
      * @param dAppId The DApp ID. If no dAppId is set the default DApp ID will be set.
      * @returns The wallet address list.
      */
-    getAddresses(changeType: number, size: number, startIndex?: number, dAppId?: string): Promise<string[]>;
+    // getAssetAddresses(changeType: number, size: number, startIndex?: number, asset: string): Promise<string[]>;
     /**
      * Returns the current wallet address index.
      * @example
@@ -41,7 +41,7 @@ export default interface IWalletProvider {
      * @param dAppId The DApp ID. If no dAppId is set the default DApp ID will be set.
      * @returns The current wallet address index.
      */
-    getAddressIndex(change: number, dAppId?: string): Promise<number>;
+    // getAssetAddressIndex(change: number, asset: string): Promise<number>;
     /**
      * Returns the stored redeem scripts related to the DApp ID.
      * @example
@@ -53,7 +53,7 @@ export default interface IWalletProvider {
      * @param dAppId The DApp ID. If no dAppId is set the default DApp ID will be set.
      * @returns The list of redeem scripts stored.
      */
-    getRedeemScripts(dAppId?: string): Promise<string[]>;
+    getRedeemScripts(txid: string): Promise<string[]>;
     /**
      * Adds the redeem script into the wallet.
      * @example
@@ -63,7 +63,7 @@ export default interface IWalletProvider {
      * @param redeemScript The redeem script you want to add.
      * @param dAppId The DApp ID. If no dAppId is set the default DApp ID will be set.
      */
-    addRedeemScript(redeemScript: string, dAppId?: string): Promise<void>;
+    addRedeemScript(redeemScript: string, txid: string): Promise<void>;
     /**
      * Returns the transaction outputs which addresses are spendable.
      * @example
@@ -83,7 +83,7 @@ export default interface IWalletProvider {
      * @param dAppId The DApp ID.
      * @returns The unspent transaction output object list.
      */
-    getSpendableUtxos(dAppId?: string): Promise<Utxo[]>;
+    getSpendableUtxos(address: string): Promise<Utxo[]>;
     /**
      * Returns the unspent transaction outputs belonging to the DApp which addresses are unspendable.
      * @example
@@ -104,7 +104,7 @@ export default interface IWalletProvider {
      * @returns The unspent transaction output object list.
      * If the addresses of the DApp are spendable, returns an empty array.
      */
-    getUnspendableUtxos(dAppId: string): Promise<Utxo[]>;
+    getUnspendableUtxos(address: string): Promise<Utxo[]>;
     /**
      * Signs a message with the private key of an address.
      * @example
@@ -139,7 +139,7 @@ export default interface IWalletProvider {
      * @returns The signed raw transaction in serialized transaction format encoded as hex.
      * The provider should throw an error when the transaction is not generated.
      */
-    createSignedTx(outputs: Output[], dAppId?: string): Promise<string>;
+    createSignedTx(outputs: Output[], address: string): Promise<string>;
     /**
      * Returns the Ravencoin protocol version.
      * @example
