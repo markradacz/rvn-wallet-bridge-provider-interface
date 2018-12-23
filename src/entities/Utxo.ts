@@ -20,15 +20,15 @@ export default class Utxo {
   public script: string
 
   /**
-   * Corbes
+   * Satoshis
    */
-  public corbes: number
+  public satoshis: number
 
-  constructor(txid: string, outputIndex: number, address: string, script: string, corbes: number) {
+  constructor(txid: string, outputIndex: number, address: string, script: string, satoshis: number) {
     this.txid = txid
     this.outputIndex = outputIndex
     this.address = address
     this.script = script
-    this.corbes = corbes
+    this.satoshis = satoshis
   }
 }

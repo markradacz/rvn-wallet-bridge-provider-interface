@@ -4,7 +4,7 @@ export default class Output {
      */
     lockScript: string;
     /**
-     * The value transferred to the lock script in corbe.
+     * The value transferred to the lock script in satoshi.
      */
     amount: number;
     constructor(lockScript: string, amount: number);

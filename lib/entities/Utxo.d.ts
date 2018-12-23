@@ -16,8 +16,8 @@ export default class Utxo {
      */
     script: string;
     /**
-     * corbes
+     * satoshis
      */
-    corbes: number;
-    constructor(txid: string, outputIndex: number, address: string, script: string, corbes: number);
+    satoshis: number;
+    constructor(txid: string, outputIndex: number, address: string, script: string, satoshis: number);
 }

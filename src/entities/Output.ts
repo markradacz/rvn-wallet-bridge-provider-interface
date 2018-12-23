@@ -5,7 +5,7 @@ export default class Output {
   public lockScript: string
 
   /**
-   * The value transferred to the lock script in corbe.
+   * The value transferred to the lock script in satoshi.
    */
   public amount: number
 

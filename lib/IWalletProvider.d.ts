@@ -77,7 +77,7 @@ export default interface IWalletProvider {
      *       'outputIndex' : 0,
      *       'address' : 'ravencoin:qrsy0xwugcajsqa99c9nf05pz7ndckj55ctlsztu2p',
      *       'script' : '76a91447862fe165e6121af80d5dde1ecb478ed170565b88ac',
-     *       'corbes' : 50000
+     *       'satoshis' : 50000
      *     }
      *   ]
      * @param dAppId The DApp ID.
@@ -97,7 +97,7 @@ export default interface IWalletProvider {
      *       'outputIndex' : 0,
      *       'address' : 'ravencoin:qrsy0xwugcajsqa99c9nf05pz7ndckj55ctlsztu2p',
      *       'script' : '76a91447862fe165e6121af80d5dde1ecb478ed170565b88ac',
-     *       'corbes' : 50000
+     *       'satoshis' : 50000
      *     }
      *   ]
      * @param dAppId The DApp ID.
@@ -164,7 +164,7 @@ export default interface IWalletProvider {
      * const fee = await provider.getFeePerByte()
      * console.log(fee)
      * > 1
-     * @returns Transaction fee per byte in corbe.
+     * @returns Transaction fee per byte in satoshi.
      */
     getFeePerByte(): Promise<number>;
 }
